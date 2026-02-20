@@ -12,16 +12,17 @@ A simple local Retrieval-Augmented Generation (RAG) project:
 - Print source pages used for each answer
 
 Everything runs locally on your machine (no paid API calls).  
-Don’t commit copyrighted PDFs to a public repo.
 
 ---
 ## Demo (example)
 After ingesting, run chat and ask:
 
 **Question 1**
-> What is this book about in 2–3 sentences? Mention the author’s main goal. 
+
+You: What is this book about in 2–3 sentences? Mention the author’s main goal. 
 
 **Example output 1**
+
 Agent: This book is about designing data-intensive applications, covering various aspects of distributed systems, transactions, and database systems. The author, Martin Kleppmann, aims to share his knowledge and experience gained from working on large-scale data infrastructure to help readers avoid common mistakes and develop better software. His main goal is to make profound technical ideas accessible to everyone, enabling them to create more effective and efficient applications.
 
 Sources:
@@ -30,7 +31,11 @@ Sources:
 - page 612
 
 **Question 2**
+
+You: What are the main themes of this book? Give 5 bullet points.
+
 **Example output 2**
+
 Agent: Based on the provided context, here are five main themes of this book:
 
 * The importance of clarity in system architecture by being clear about data derivation
@@ -86,3 +91,32 @@ python scripts/chat.py
 ```
 
 Type ```exit``` to quit.
+
+## Troubleshooting
+
+### 1) “Answers are nonsense” / retrieval seems wrong
+
+Your PDF might be scanned (image-only). pypdf can’t extract real text from images.
+
+Fix: OCR the PDF first (we can add an OCR pipeline if needed).
+
+### 2) It’s slow
+
+Reduce retrieval k in scripts/chat.py (try 4 instead of 6)
+
+Reduce chunk size in scripts/ingest.py (e.g., 800)
+
+Use a smaller model if needed
+
+
+### 3) Rebuild the index
+
+If you updated the PDF or chunking settings:
+```bash
+rm -rf chroma_db
+python scripts/ingest.py
+```
+
+## License
+
+MIT
