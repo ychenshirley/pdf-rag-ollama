@@ -19,10 +19,10 @@ A simple local Retrieval-Augmented Generation (RAG) project:
 ## Demo (example)
 After ingesting, run chat and ask:
 
-**Question1**
+**Question 1**
 > What is this book about in 2–3 sentences? Mention the author’s main goal. 
 
-**Example output1**
+**Example output 1**
 Agent: This book is about designing data-intensive applications, covering various aspects of distributed systems, transactions, and database systems. The author, Martin Kleppmann, aims to share his knowledge and experience gained from working on large-scale data infrastructure to help readers avoid common mistakes and develop better software. His main goal is to make profound technical ideas accessible to everyone, enabling them to create more effective and efficient applications.
 
 Sources:
@@ -30,8 +30,8 @@ Sources:
 - page 455
 - page 612
 
-**Question2**
-**Example output2**
+**Question 2**
+**Example output 2**
 Agent: Based on the provided context, here are five main themes of this book:
 
 * The importance of clarity in system architecture by being clear about data derivation
