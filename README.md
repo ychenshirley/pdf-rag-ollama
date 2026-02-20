@@ -11,11 +11,10 @@ A simple local Retrieval-Augmented Generation (RAG) project:
 - Ask questions using a local Ollama model (e.g. Llama 3.1 8B)
 - Print source pages used for each answer
 
-> Everything runs locally on your machine (no paid API calls).  
-> Don’t commit copyrighted PDFs to a public repo.
+Everything runs locally on your machine (no paid API calls).  
+Don’t commit copyrighted PDFs to a public repo.
 
 ---
-
 ## Demo (example)
 After ingesting, run chat and ask:
 
@@ -44,7 +43,6 @@ Sources:
 - page 407
 - page 4
 - page 188
-
 ---
 
 ## Requirements
